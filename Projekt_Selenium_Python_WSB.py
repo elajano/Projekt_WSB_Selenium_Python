@@ -4,7 +4,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 
 chrome_options = Options()
@@ -31,16 +33,41 @@ driver.get_screenshot_as_file('footer_screenshot.png')
 driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb = driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb.click()
+WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Zezwól na wszystkie pliki cookie']"))).click()
+time.sleep (3)
+# driver.get("www.facebook.com")
+# driver.find_elements_by_xpath("//button[contains(string(), 'Zezwól na wszystkie pliki cookie')]")[0].click()
+'''
+button_accept_cookies_fb = driver.find_element('xpath','//*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[1]')
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div[1]/div/span/span - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1] - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div[1] - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div[2]
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[1] - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div
+button_accept_cookies_fb.click()'''
 
+driver.get_screenshot_as_file('fb_screenshot.png')
+def link_FB():
+    if link_FB == "https://www.facebook.com/Poland4Weekend/":
+        return link_FB
+        print ("link do profilu strony na facebook jest prawidłowy")
+    elif link_FB != ("https://www.facebook.com/Poland4Weekend/"):
+        return "link do profilu strony na facebook jest nieprawidłowy"
+        print ("link do profilu strony na facebook jest nieprawidłowy")
+    
+print("mama")
 #xpath do Twitter
 driver.find_element('xpath', '//*[@id="img_1_comp-jsugpnbl"]/img')
 button_tw = driver.find_element('xpath', '//*[@id="img_1_comp-jsugpnbl"]/img')
 button_tw.click()
+time.sleep (5)
 
 #xpath do Instagram
 driver.find_element('xpath', '//*[@id="img_2_comp-jsugpnbl"]/img')
 button_in = driver.find_element('xpath', '//*[@id="img_2_comp-jsugpnbl"]/img')
-
+time.sleep (5)
 
 
 
