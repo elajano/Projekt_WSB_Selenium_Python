@@ -23,6 +23,8 @@ link = driver.find_element('xpath','//*[@id="bgLayers_comp-jsugpnao"]/div[1]')
 webdriver.ActionChains(driver).move_to_element(link).perform()
 time.sleep(3)
 #zrób zdjęcie stopki
+driver.get_screenshot_as_file('footer_screenshot.png')
+
 
 
 #xpath do FB
