@@ -21,14 +21,11 @@ time.sleep(2)
 #pokaż stopkę
 link = driver.find_element('xpath','//*[@id="bgLayers_comp-jsugpnao"]/div[1]')
 webdriver.ActionChains(driver).move_to_element(link).perform()
-#zrob zdjecie stopki
-driver.get_screenshot_as_file("screen_footer.png")
 time.sleep(3)
 #zrób zdjęcie stopki
 
 
 #xpath do FB
-fb = driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb = driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb.click()
@@ -59,4 +56,7 @@ search_button.submit()
 driver.get_screenshot_as_file('screen.png')
 time.sleep(3)'''
 
+'''link = driver.find_element('xpath','//*[@id="main-page-didyouknow"]/p[2]/i[1]/b/a')
+webdriver.ActionChains(driver).move_to_element(link).perform()
+driver.quit()'''
 driver.quit()
