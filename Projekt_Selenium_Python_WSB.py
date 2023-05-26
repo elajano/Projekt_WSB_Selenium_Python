@@ -21,8 +21,9 @@ time.sleep(2)
 #pokaż stopkę
 link = driver.find_element('xpath','//*[@id="bgLayers_comp-jsugpnao"]/div[1]')
 webdriver.ActionChains(driver).move_to_element(link).perform()
+#zrob zdjecie stopki
+driver.get_screenshot_as_file("screen_footer.png")
 time.sleep(3)
-#zrób zdjęcie stopki
 
 
 #xpath do FB
