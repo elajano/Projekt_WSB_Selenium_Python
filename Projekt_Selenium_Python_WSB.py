@@ -58,10 +58,8 @@ button_accept_cookies_fb.click()'''
 
 '''
 if link_FB == "https://www.facebook.com/Poland4Weekend/":
-    assert link_FB
     print ("link do profilu strony na facebook jest prawidłowy")
-elif link_FB != ("https://www.facebook.com/Poland4Weekend/"):
-    assert link_FB
+else link_FB != ("https://www.facebook.com/Poland4Weekend/"):
     print ("link do profilu strony na facebook jest nieprawidłowy")'''
     
 
