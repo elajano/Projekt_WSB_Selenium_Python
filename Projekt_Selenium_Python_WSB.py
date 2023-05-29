@@ -25,7 +25,7 @@ webdriver.ActionChains(driver).move_to_element(link).perform()
 time.sleep(3)
 #zrób zdjęcie stopki
 driver.get_screenshot_as_file('footer_screenshot.png')
-link_FB = https://www.facebook.com/Poland4Weekend/
+link_FB = "https://www.facebook.com/Poland4Weekend/"
 
 
 
@@ -35,7 +35,7 @@ button_fb = driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb.click()
 assert button_fb is not None
 print ("Link do strony FB jest aktywny")
-if button_fb == https://www.facebook.com/Poland4Weekend/:
+if button_fb == "https://www.facebook.com/Poland4Weekend/":
     print ("Link do strony FB jest poprawny")
 time.sleep (3)
 
