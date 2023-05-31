@@ -1,0 +1,10 @@
+#w terminalu w folderze projektu
+python -m venv .venv
+#tworzy folder venv ze srodowiskiem
+#aktywacja
+.\.venv\Scripts\activate
+# instalacja pytest
+pip install pytest
+#update 
+python.exe -m pip install --upgrade pip
+
