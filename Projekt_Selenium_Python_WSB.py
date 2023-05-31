@@ -27,7 +27,7 @@ time.sleep(2)
 #pokaż stopkę
 link = driver.find_element('xpath','//*[@id="bgLayers_comp-jsugpnao"]/div[1]')
 webdriver.ActionChains(driver).move_to_element(link).perform()
-time.sleep(3)
+time.sleep(2)
 #zrób zdjęcie stopki
 driver.get_screenshot_as_file('footer_screenshot.png')
 
@@ -39,7 +39,9 @@ assert button_fb is not None
 print ("Link do strony FB jest aktywny")
 if link_FB == "https://www.facebook.com/Poland4Weekend/":
     print ("Link do profilu na Facebook jest poprawny")
-time.sleep (3)
+else:
+    print ("link do profilu na Facebook jest niepoprawny")
+time.sleep (2)
 
 #xpath do Twitter
 driver.find_element('xpath', '//*[@id="img_1_comp-jsugpnbl"]/img')
@@ -47,10 +49,12 @@ button_tw = driver.find_element('xpath', '//*[@id="img_1_comp-jsugpnbl"]/img')
 button_tw.click()
 assert button_tw is not None
 print ("Link do strony Twitter jest aktywny")
-time.sleep (5)
+time.sleep (2)
 if link_Tw == "https://twitter.com/Poland4W":
     print ("Link do profilu na Twitter jest poprawny")
-time.sleep (3)
+else:
+    print ("link do profilu na Twitter jest niepoprawny")
+time.sleep (2)
 
 #xpath do Instagram
 driver.find_element('xpath', '//*[@id="img_2_comp-jsugpnbl"]/img')
@@ -58,10 +62,12 @@ button_in = driver.find_element('xpath', '//*[@id="img_2_comp-jsugpnbl"]/img')
 button_in.click()
 assert button_in is not None
 print ("Link do strony Instagram jest aktywny")
-time.sleep (5)
+time.sleep (2)
 if link_In == "https://www.instagram.com/poland4weekend/":
     print ("Link do profilu na Instagram jest poprawny")
-time.sleep (3)
+else:
+    print ("link do profilu na Instagram jest niepoprawny")
+time.sleep (2)
 
 
 driver.quit()
