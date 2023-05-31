@@ -26,8 +26,11 @@ time.sleep(3)
 #zrób zdjęcie stopki
 driver.get_screenshot_as_file('footer_screenshot.png')
 link_FB = "https://www.facebook.com/Poland4Weekend/"
+<<<<<<< HEAD
 link_Tw = "https://twitter.com/Poland4W"
 link_In =  "https://www.instagram.com/poland4weekend/"
+=======
+>>>>>>> a63c50f26289753e17610405c9849fdd5ff7d5f4
 
 
 
@@ -37,11 +40,40 @@ button_fb = driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb.click()
 assert button_fb is not None
 print ("Link do strony FB jest aktywny")
+<<<<<<< HEAD
 if link_FB == "https://www.facebook.com/Poland4Weekend/":
     print ("Link do profilu na Facebook jest poprawny")
 time.sleep (3)
 
 
+=======
+if button_fb == "https://www.facebook.com/Poland4Weekend/":
+    print ("Link do strony FB jest poprawny")
+time.sleep (3)
+
+
+#driver.get("https://www.facebook.com")
+#driver.find_elements_by_xpath("//button[contains(string(), 'Zezwól na wszystkie pliki cookie')]")[0].click()
+'''
+button_accept_cookies_fb = driver.find_element('xpath','//*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[1]')
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div[1]/div/span/span - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1] - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div[1] - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div[2]
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[1] - nie dziala
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div
+# //*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div[2]/div/div[2]
+button_accept_cookies_fb.click()'''
+
+
+
+'''
+if link_FB == "https://www.facebook.com/Poland4Weekend/":
+    print ("link do profilu strony na facebook jest prawidłowy")
+else link_FB != ("https://www.facebook.com/Poland4Weekend/"):
+    print ("link do profilu strony na facebook jest nieprawidłowy")'''
+>>>>>>> a63c50f26289753e17610405c9849fdd5ff7d5f4
     
 
 
