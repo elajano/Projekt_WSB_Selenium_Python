@@ -64,15 +64,4 @@ if link_In == "https://www.instagram.com/poland4weekend/":
 time.sleep (3)
 
 
-
-'''
-
-search_field = driver.find_element('id', 'grey')
-search_field.send_keys('warszawa')
-search_button = driver.find_element('xpath','//*[@id="acp_magento_search_id_main_page"]')
-search_button.submit()
-driver.get_screenshot_as_file('screen.png')
-time.sleep(3)'''
-
-
 driver.quit()
