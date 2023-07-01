@@ -7,7 +7,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-import pytest
 
 chrome_options = Options()
 chrome_options.add_experimental_option("detach",True)
@@ -25,49 +24,54 @@ button_accept_cookies = driver.find_element('xpath','/html/body/div[2]/div/div/d
 button_accept_cookies.click()
 time.sleep(2)
 
-#pokaż stopkę
+#nawigacja stopkę
 link = driver.find_element('xpath','//*[@id="bgLayers_comp-jsugpnao"]/div[1]')
 webdriver.ActionChains(driver).move_to_element(link).perform()
 time.sleep(2)
-#zrób zdjęcie stopki
+# zdjęcie stopki
 driver.get_screenshot_as_file('footer_screenshot.png')
 
-#xpath do FB
+#działania na FB
 driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb = driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb.click()
 assert button_fb is not None
 print ("Link do strony FB jest aktywny")
-if link_FB == "https://www.facebook.com/Poland4Weekend/":
-    print ("Link do profilu na Facebook jest poprawny")
-else:
-    print ("link do profilu na Facebook jest niepoprawny")
-time.sleep (2)
+try:
+    assert driver.current_url == link_FB
+except:
+    driver.get
+finally:
+    print('link do FB jest poprawny')
 
-#xpath do Twitter
+
+
+#działania Twitter
 driver.find_element('xpath', '//*[@id="img_1_comp-jsugpnbl"]/img')
 button_tw = driver.find_element('xpath', '//*[@id="img_1_comp-jsugpnbl"]/img')
 button_tw.click()
 assert button_tw is not None
 print ("Link do strony Twitter jest aktywny")
-time.sleep (2)
-if link_Tw == "https://twitter.com/Poland4W":
-    print ("Link do profilu na Twitter jest poprawny")
-else:
-    print ("link do profilu na Twitter jest niepoprawny")
+try:
+    assert driver.current_url == link_Tw
+except:
+    driver.get
+finally:
+    print('link do Twitter jest poprawny')
 time.sleep (2)
 
-#xpath do Instagram
+#działania na Instagram
 driver.find_element('xpath', '//*[@id="img_2_comp-jsugpnbl"]/img')
 button_in = driver.find_element('xpath', '//*[@id="img_2_comp-jsugpnbl"]/img')
 button_in.click()
 assert button_in is not None
 print ("Link do strony Instagram jest aktywny")
-time.sleep (2)
-if link_In == "https://www.instagram.com/poland4weekend/":
-    print ("Link do profilu na Instagram jest poprawny")
-else:
-    print ("link do profilu na Instagram jest niepoprawny")
+try:
+    assert driver.current_url == link_In
+except:
+    driver.get
+finally:
+    print('link do Instagram jest poprawny')
 time.sleep (2)
 
 
