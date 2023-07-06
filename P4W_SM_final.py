@@ -7,7 +7,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-import pytest
 
 chrome_options = Options()
 chrome_options.add_experimental_option("detach",True)
@@ -18,7 +17,7 @@ driver.get('https://www.poland4weekend.com/')
 
 link_FB = "https://www.facebook.com/Poland4Weekend/"
 link_Tw = "https://twitter.com/Poland4W"
-link_In =  "https://www.instagram.com/poland4weekend/"
+link_In = "https://www.instagram.com/poland4weekend/"
 
 time.sleep(2)
 button_accept_cookies = driver.find_element('xpath','/html/body/div[2]/div/div/div[1]/button[1]')
@@ -37,7 +36,7 @@ driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb = driver.find_element('xpath', '//*[@id="img_0_comp-jsugpnbl"]/img')
 button_fb.click()
 assert button_fb is not None
-print ("Link do strony FB jest aktywny")
+print("Link do strony FB jest aktywny")
 try:
     assert driver.current_url == link_FB
 except:
@@ -52,28 +51,28 @@ driver.find_element('xpath', '//*[@id="img_1_comp-jsugpnbl"]/img')
 button_tw = driver.find_element('xpath', '//*[@id="img_1_comp-jsugpnbl"]/img')
 button_tw.click()
 assert button_tw is not None
-print ("Link do strony Twitter jest aktywny")
+print("Link do strony Twitter jest aktywny")
 try:
     assert driver.current_url == link_Tw
 except:
     driver.get
 finally:
     print('link do Twitter jest poprawny')
-time.sleep (2)
+time.sleep(2)
 
 #działania na Instagram
 driver.find_element('xpath', '//*[@id="img_2_comp-jsugpnbl"]/img')
 button_in = driver.find_element('xpath', '//*[@id="img_2_comp-jsugpnbl"]/img')
 button_in.click()
 assert button_in is not None
-print ("Link do strony Instagram jest aktywny")
+print("Link do strony Instagram jest aktywny")
 try:
     assert driver.current_url == link_In
 except:
     driver.get
 finally:
     print('link do Instagram jest poprawny')
-time.sleep (2)
+time.sleep(2)
 
 
 driver.quit()
